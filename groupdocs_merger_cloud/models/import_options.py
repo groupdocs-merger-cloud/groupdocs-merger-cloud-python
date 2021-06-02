@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="ErrorDetails.py">
+# <copyright company="Aspose Pty Ltd" file="ImportOptions.py">
 #   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,11 @@ import re  # noqa: F401
 
 import six
 
-class ErrorDetails(object):
+from groupdocs_merger_cloud.models import Options
+
+class ImportOptions(Options):
     """
-    The error details
+    Import API options
     """
 
     """
@@ -43,75 +45,50 @@ class ErrorDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'request_id': 'str',
-        'date': 'datetime'
+        'attachments': 'list[str]'
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'date': 'Date'
+        'attachments': 'Attachments'
     }
 
-    def __init__(self, request_id=None, date=None, **kwargs):  # noqa: E501
-        """Initializes new instance of ErrorDetails"""  # noqa: E501
+    def __init__(self, attachments=None, **kwargs):  # noqa: E501
+        """Initializes new instance of ImportOptions"""  # noqa: E501
 
-        self._request_id = None
-        self._date = None
+        self._attachments = None
 
-        if request_id is not None:
-            self.request_id = request_id
-        if date is not None:
-            self.date = date
+        if attachments is not None:
+            self.attachments = attachments
+
+        base = super(ImportOptions, self)
+        base.__init__(**kwargs)
+
+        self.swagger_types.update(base.swagger_types)
+        self.attribute_map.update(base.attribute_map)
     
     @property
-    def request_id(self):
+    def attachments(self):
         """
-        Gets the request_id.  # noqa: E501
+        Gets the attachments.  # noqa: E501
 
-        The request id  # noqa: E501
+        List of files paths to import as attachments  # noqa: E501
 
-        :return: The request_id.  # noqa: E501
-        :rtype: str
+        :return: The attachments.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._request_id
+        return self._attachments
 
-    @request_id.setter
-    def request_id(self, request_id):
+    @attachments.setter
+    def attachments(self, attachments):
         """
-        Sets the request_id.
+        Sets the attachments.
 
-        The request id  # noqa: E501
+        List of files paths to import as attachments  # noqa: E501
 
-        :param request_id: The request_id.  # noqa: E501
-        :type: str
+        :param attachments: The attachments.  # noqa: E501
+        :type: list[str]
         """
-        self._request_id = request_id
-    
-    @property
-    def date(self):
-        """
-        Gets the date.  # noqa: E501
-
-        Date  # noqa: E501
-
-        :return: The date.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date
-
-    @date.setter
-    def date(self, date):
-        """
-        Sets the date.
-
-        Date  # noqa: E501
-
-        :param date: The date.  # noqa: E501
-        :type: datetime
-        """
-        if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
-        self._date = date
+        self._attachments = attachments
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -147,7 +124,7 @@ class ErrorDetails(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ErrorDetails):
+        if not isinstance(other, ImportOptions):
             return False
 
         return self.__dict__ == other.__dict__

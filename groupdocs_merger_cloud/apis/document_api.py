@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="merger_api.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -82,6 +82,97 @@ class DocumentApi(object):
         :param configuration API configuration
         """
         return DocumentApi(configuration)
+
+    def call_import(self, request,**kwargs):  # noqa: E501
+        """Import attachments into pdf document  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param ImportOptions options: Import options (required)
+        :return: DocumentResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+
+        if kwargs.get('is_async'):
+            return self._call_import_with_http_info(request, **kwargs)  # noqa: E501
+        
+        (data) = self._call_import_with_http_info(request, **kwargs)  # noqa: E501
+        return data
+
+    def _call_import_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Import attachments into pdf document  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param CallImportRequest request object with parameters
+        :return: DocumentResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'options' is set
+        if request.options is None:
+            raise ValueError("Missing the required parameter `options` when calling `call_import`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/merger/import'
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.options is not None:
+            body_params = request.options
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        call_kwargs = {
+            'resource_path':path, 
+            'method':'POST',
+            'path_params':path_params,
+            'query_params':query_params,
+            'header_params':header_params,
+            'body':body_params,
+            'post_params':form_params,
+            'files':local_var_files,
+            'response_type':'DocumentResult',  # noqa: E501
+            'auth_settings':self.auth.get_auth_settings(),
+            'is_async':params.get('is_async'),
+            '_return_http_data_only':params.get('_return_http_data_only'),
+            '_preload_content':params.get('_preload_content', True),
+            '_request_timeout':params.get('_request_timeout'),
+            'collection_formats':collection_formats
+        }
+
+        return self.api_client.call_api(**call_kwargs)  # noqa: E501
 
     def join(self, request,**kwargs):  # noqa: E501
         """Join multiple documents into one document  # noqa: E501
@@ -365,8 +456,44 @@ class DocumentApi(object):
 # coding: utf-8
 
 # --------------------------------------------------------------------------------
+# <copyright company="Aspose Pty Ltd" file="call_import_request.py">
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
+# </copyright>
+# <summary>
+#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+# 
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+# 
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# --------------------------------------------------------------------------------
+
+class CallImportRequest(object):
+    """
+    Request model for call_import operation.
+    :param options Import options
+    """
+
+    def __init__(self, options):
+        """Initializes new instance of CallImportRequest."""  # noqa: E501
+        self.options = options
+# coding: utf-8
+
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="join_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -402,7 +529,7 @@ class JoinRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="preview_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -438,7 +565,7 @@ class PreviewRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="split_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy

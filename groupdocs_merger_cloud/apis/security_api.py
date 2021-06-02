@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="merger_api.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -472,7 +472,7 @@ class SecurityApi(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="add_password_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -508,7 +508,7 @@ class AddPasswordRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="check_password_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -548,7 +548,7 @@ class CheckPasswordRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="remove_password_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -584,7 +584,7 @@ class RemovePasswordRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="update_password_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy

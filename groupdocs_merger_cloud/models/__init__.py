@@ -25,6 +25,7 @@ from groupdocs_merger_cloud.models.password_result import PasswordResult
 from groupdocs_merger_cloud.models.storage_exist import StorageExist
 from groupdocs_merger_cloud.models.storage_file import StorageFile
 from groupdocs_merger_cloud.models.file_version import FileVersion
+from groupdocs_merger_cloud.models.import_options import ImportOptions
 from groupdocs_merger_cloud.models.move_options import MoveOptions
 from groupdocs_merger_cloud.models.page_options import PageOptions
 from groupdocs_merger_cloud.models.swap_options import SwapOptions

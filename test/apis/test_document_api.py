@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -90,6 +90,25 @@ class TestDocumentApi(TestContext):
         options.output_path = self.output_path + "joined.docx"
         result = self.document_api.join(JoinRequest(options))
         self.assertEqual(options.output_path, result.path)
+
+    def test_join_cross_format(self):
+        item1 = JoinItem()
+        item1.file_info = TestFile.one_page_protected_pdf().ToFileInfo()
+        item2 = JoinItem()
+        item2.file_info = TestFile.four_pages_docx().ToFileInfo()        
+        options = JoinOptions()
+        options.join_items = [item1, item2]
+        options.output_path = self.output_path + "joined.pdf"
+        result = self.document_api.join(JoinRequest(options))
+        self.assertEqual(options.output_path, result.path)     
+
+    def test_import(self):
+        options = ImportOptions()
+        options.file_info = TestFile.one_page_protected_pdf().ToFileInfo()
+        options.attachments = [TestFile.document_txt().ToFileInfo().file_path]
+        options.output_path = self.output_path + "with-attachment.pdf"
+        result = self.document_api.call_import(CallImportRequest(options))
+        self.assertEqual(options.output_path, result.path)              
 
 if __name__ == '__main__':
     unittest.main()

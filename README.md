@@ -1,7 +1,6 @@
 # GroupDocs.Merger Cloud Python SDK
 Python package for communicating with the GroupDocs.Merger Cloud API
 
-GroupDocs.Merger Cloud allows you to merge documents and manipulate document structure across wide range of supported document types - PDF, DOCX/DOC, PPTX/PPT, XLSX/XLS, VSDX/VSD, ODT, ODS, ODP, HTML, EPUB and many others. Merge several documents into one, split single document to multiple documents, reorder or replace document pages, change page orientation, manage document password and perform other manipulations with GroupDocs.Merger Cloud API.
 ## Requirements
 
 Python 2.7 or 3.4+
@@ -49,4 +48,12 @@ except groupdocs_merger_cloud.ApiException as e:
 ## Licensing
 GroupDocs.Merger Cloud Python SDK licensed under [MIT License](http://github.com/groupdocs-merger-cloud/groupdocs-merger-cloud-python/LICENSE).
 
-[Home](https://www.groupdocs.cloud/) | [Product Page](https://products.groupdocs.cloud/merger/python) | [Docs](https://docs.groupdocs.cloud/merger/) | [Demos](https://products.groupdocs.app/merger/family) | [API Reference](https://apireference.groupdocs.cloud/merger/) | [Examples](https://github.com/groupdocs-merger-cloud/groupdocs-merger-cloud-python-samples) | [Blog](https://blog.groupdocs.cloud/category/merger/) | [Free Support](https://forum.groupdocs.cloud/c/merger) | [Free Trial](https://purchase.groupdocs.cloud/trial)
+## Resources
++ [**Website**](https://www.groupdocs.cloud)
++ [**Product Home**](https://products.groupdocs.cloud/merger)
++ [**Documentation**](https://docs.groupdocs.cloud/display/mergercloud/Home)
++ [**Free Support Forum**](https://forum.groupdocs.cloud/c/merger)
++ [**Blog**](https://blog.groupdocs.cloud/category/merger)
+
+## Contact Us
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/merger).

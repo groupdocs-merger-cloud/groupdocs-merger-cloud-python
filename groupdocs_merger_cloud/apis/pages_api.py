@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="merger_api.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -639,7 +639,7 @@ class PagesApi(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="extract_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -675,7 +675,7 @@ class ExtractRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="move_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -711,7 +711,7 @@ class MoveRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="orientation_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -747,7 +747,7 @@ class OrientationRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="remove_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -783,7 +783,7 @@ class RemoveRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="rotate_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -819,7 +819,7 @@ class RotateRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="swap_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy

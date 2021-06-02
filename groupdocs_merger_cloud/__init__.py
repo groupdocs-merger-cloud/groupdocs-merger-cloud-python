@@ -18,7 +18,7 @@ from groupdocs_merger_cloud.apis.file_api import CopyFileRequest, DeleteFileRequ
 from groupdocs_merger_cloud.apis.storage_api import GetDiscUsageRequest, GetFileVersionsRequest, ObjectExistsRequest, StorageExistsRequest
 from groupdocs_merger_cloud.apis.folder_api import CopyFolderRequest, CreateFolderRequest, DeleteFolderRequest, GetFilesListRequest, MoveFolderRequest
 from groupdocs_merger_cloud.apis.info_api import GetInfoRequest
-from groupdocs_merger_cloud.apis.document_api import SplitRequest, PreviewRequest, JoinRequest
+from groupdocs_merger_cloud.apis.document_api import SplitRequest, PreviewRequest, JoinRequest, CallImportRequest
 from groupdocs_merger_cloud.apis.pages_api import SwapRequest, RotateRequest, RemoveRequest, OrientationRequest, MoveRequest, ExtractRequest
 from groupdocs_merger_cloud.apis.security_api import UpdatePasswordRequest, RemovePasswordRequest, CheckPasswordRequest, AddPasswordRequest
 
@@ -50,6 +50,7 @@ from groupdocs_merger_cloud.models.password_result import PasswordResult
 from groupdocs_merger_cloud.models.storage_exist import StorageExist
 from groupdocs_merger_cloud.models.storage_file import StorageFile
 from groupdocs_merger_cloud.models.file_version import FileVersion
+from groupdocs_merger_cloud.models.import_options import ImportOptions
 from groupdocs_merger_cloud.models.move_options import MoveOptions
 from groupdocs_merger_cloud.models.page_options import PageOptions
 from groupdocs_merger_cloud.models.swap_options import SwapOptions
