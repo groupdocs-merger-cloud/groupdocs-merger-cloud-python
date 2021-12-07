@@ -12,6 +12,7 @@ from groupdocs_merger_cloud.apis.info_api import InfoApi
 from groupdocs_merger_cloud.apis.document_api import DocumentApi
 from groupdocs_merger_cloud.apis.pages_api import PagesApi
 from groupdocs_merger_cloud.apis.security_api import SecurityApi
+from groupdocs_merger_cloud.apis.license_api import LicenseApi
 
 # import requests
 from groupdocs_merger_cloud.apis.file_api import CopyFileRequest, DeleteFileRequest, DownloadFileRequest, MoveFileRequest, UploadFileRequest
@@ -29,6 +30,7 @@ from groupdocs_merger_cloud.api_client import ApiClient
 from groupdocs_merger_cloud.configuration import Configuration
 
 # import models
+from groupdocs_merger_cloud.models.consumption_result import ConsumptionResult
 from groupdocs_merger_cloud.models.disc_usage import DiscUsage
 from groupdocs_merger_cloud.models.document_result import DocumentResult
 from groupdocs_merger_cloud.models.error import Error

@@ -4,6 +4,7 @@
 from __future__ import absolute_import
 
 # import models
+from groupdocs_merger_cloud.models.consumption_result import ConsumptionResult
 from groupdocs_merger_cloud.models.disc_usage import DiscUsage
 from groupdocs_merger_cloud.models.document_result import DocumentResult
 from groupdocs_merger_cloud.models.error import Error
