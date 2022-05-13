@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="JoinItem.py">
-#   Copyright (c) 2003-2021 Aspose Pty Ltd
+#   Copyright (c) 2003-2022 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,7 +47,8 @@ class JoinItem(object):
         'pages': 'list[int]',
         'start_page_number': 'int',
         'end_page_number': 'int',
-        'range_mode': 'str'
+        'range_mode': 'str',
+        'word_join_mode': 'str'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class JoinItem(object):
         'pages': 'Pages',
         'start_page_number': 'StartPageNumber',
         'end_page_number': 'EndPageNumber',
-        'range_mode': 'RangeMode'
+        'range_mode': 'RangeMode',
+        'word_join_mode': 'WordJoinMode'
     }
 
-    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, **kwargs):  # noqa: E501
+    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, **kwargs):  # noqa: E501
         """Initializes new instance of JoinItem"""  # noqa: E501
 
         self._file_info = None
@@ -66,6 +68,7 @@ class JoinItem(object):
         self._start_page_number = None
         self._end_page_number = None
         self._range_mode = None
+        self._word_join_mode = None
 
         if file_info is not None:
             self.file_info = file_info
@@ -77,6 +80,8 @@ class JoinItem(object):
             self.end_page_number = end_page_number
         if range_mode is not None:
             self.range_mode = range_mode
+        if word_join_mode is not None:
+            self.word_join_mode = word_join_mode
     
     @property
     def file_info(self):
@@ -211,6 +216,40 @@ class JoinItem(object):
             self._range_mode = range_mode
         else:
             self._range_mode = allowed_values[int(range_mode) if six.PY3 else long(range_mode)]
+    
+    @property
+    def word_join_mode(self):
+        """
+        Gets the word_join_mode.  # noqa: E501
+
+        Allows to join word documents without empty space between documents  # noqa: E501
+
+        :return: The word_join_mode.  # noqa: E501
+        :rtype: str
+        """
+        return self._word_join_mode
+
+    @word_join_mode.setter
+    def word_join_mode(self, word_join_mode):
+        """
+        Sets the word_join_mode.
+
+        Allows to join word documents without empty space between documents  # noqa: E501
+
+        :param word_join_mode: The word_join_mode.  # noqa: E501
+        :type: str
+        """
+        if word_join_mode is None:
+            raise ValueError("Invalid value for `word_join_mode`, must not be `None`")  # noqa: E501
+        allowed_values = ["Default", "Continuous"]  # noqa: E501
+        if not word_join_mode.isdigit():	
+            if word_join_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `word_join_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(word_join_mode, allowed_values))
+            self._word_join_mode = word_join_mode
+        else:
+            self._word_join_mode = allowed_values[int(word_join_mode) if six.PY3 else long(word_join_mode)]
 
     def to_dict(self):
         """Returns the model properties as a dict"""
