@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="JoinItem.py">
-#   Copyright (c) 2003-2022 Aspose Pty Ltd
+#   Copyright (c) 2003-2023 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ import six
 
 class JoinItem(object):
     """
-    Describes document for join operation
+    Describes document for join operation.
     """
 
     """
@@ -48,7 +48,8 @@ class JoinItem(object):
         'start_page_number': 'int',
         'end_page_number': 'int',
         'range_mode': 'str',
-        'word_join_mode': 'str'
+        'word_join_mode': 'str',
+        'image_join_mode': 'str'
     }
 
     attribute_map = {
@@ -57,10 +58,11 @@ class JoinItem(object):
         'start_page_number': 'StartPageNumber',
         'end_page_number': 'EndPageNumber',
         'range_mode': 'RangeMode',
-        'word_join_mode': 'WordJoinMode'
+        'word_join_mode': 'WordJoinMode',
+        'image_join_mode': 'ImageJoinMode'
     }
 
-    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, **kwargs):  # noqa: E501
+    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, image_join_mode=None, **kwargs):  # noqa: E501
         """Initializes new instance of JoinItem"""  # noqa: E501
 
         self._file_info = None
@@ -69,6 +71,7 @@ class JoinItem(object):
         self._end_page_number = None
         self._range_mode = None
         self._word_join_mode = None
+        self._image_join_mode = None
 
         if file_info is not None:
             self.file_info = file_info
@@ -82,13 +85,15 @@ class JoinItem(object):
             self.range_mode = range_mode
         if word_join_mode is not None:
             self.word_join_mode = word_join_mode
+        if image_join_mode is not None:
+            self.image_join_mode = image_join_mode
     
     @property
     def file_info(self):
         """
         Gets the file_info.  # noqa: E501
 
-        File info  # noqa: E501
+        File info.  # noqa: E501
 
         :return: The file_info.  # noqa: E501
         :rtype: FileInfo
@@ -100,7 +105,7 @@ class JoinItem(object):
         """
         Sets the file_info.
 
-        File info  # noqa: E501
+        File info.  # noqa: E501
 
         :param file_info: The file_info.  # noqa: E501
         :type: FileInfo
@@ -222,7 +227,7 @@ class JoinItem(object):
         """
         Gets the word_join_mode.  # noqa: E501
 
-        Allows to join word documents without empty space between documents  # noqa: E501
+        Allows to join word documents without empty space between documents.  # noqa: E501
 
         :return: The word_join_mode.  # noqa: E501
         :rtype: str
@@ -234,7 +239,7 @@ class JoinItem(object):
         """
         Sets the word_join_mode.
 
-        Allows to join word documents without empty space between documents  # noqa: E501
+        Allows to join word documents without empty space between documents.  # noqa: E501
 
         :param word_join_mode: The word_join_mode.  # noqa: E501
         :type: str
@@ -250,6 +255,40 @@ class JoinItem(object):
             self._word_join_mode = word_join_mode
         else:
             self._word_join_mode = allowed_values[int(word_join_mode) if six.PY3 else long(word_join_mode)]
+    
+    @property
+    def image_join_mode(self):
+        """
+        Gets the image_join_mode.  # noqa: E501
+
+        Possible modes for the image joining.  # noqa: E501
+
+        :return: The image_join_mode.  # noqa: E501
+        :rtype: str
+        """
+        return self._image_join_mode
+
+    @image_join_mode.setter
+    def image_join_mode(self, image_join_mode):
+        """
+        Sets the image_join_mode.
+
+        Possible modes for the image joining.  # noqa: E501
+
+        :param image_join_mode: The image_join_mode.  # noqa: E501
+        :type: str
+        """
+        if image_join_mode is None:
+            raise ValueError("Invalid value for `image_join_mode`, must not be `None`")  # noqa: E501
+        allowed_values = ["Horizontal", "Vertical"]  # noqa: E501
+        if not image_join_mode.isdigit():	
+            if image_join_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `image_join_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(image_join_mode, allowed_values))
+            self._image_join_mode = image_join_mode
+        else:
+            self._image_join_mode = allowed_values[int(image_join_mode) if six.PY3 else long(image_join_mode)]
 
     def to_dict(self):
         """Returns the model properties as a dict"""
