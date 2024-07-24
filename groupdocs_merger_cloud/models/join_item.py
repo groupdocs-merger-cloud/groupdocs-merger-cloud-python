@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="JoinItem.py">
-#   Copyright (c) 2003-2023 Aspose Pty Ltd
+#   Copyright (c) 2003-2024 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,6 +49,7 @@ class JoinItem(object):
         'end_page_number': 'int',
         'range_mode': 'str',
         'word_join_mode': 'str',
+        'word_join_compliance': 'str',
         'image_join_mode': 'str'
     }
 
@@ -59,10 +60,11 @@ class JoinItem(object):
         'end_page_number': 'EndPageNumber',
         'range_mode': 'RangeMode',
         'word_join_mode': 'WordJoinMode',
+        'word_join_compliance': 'WordJoinCompliance',
         'image_join_mode': 'ImageJoinMode'
     }
 
-    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, image_join_mode=None, **kwargs):  # noqa: E501
+    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, word_join_compliance=None, image_join_mode=None, **kwargs):  # noqa: E501
         """Initializes new instance of JoinItem"""  # noqa: E501
 
         self._file_info = None
@@ -71,6 +73,7 @@ class JoinItem(object):
         self._end_page_number = None
         self._range_mode = None
         self._word_join_mode = None
+        self._word_join_compliance = None
         self._image_join_mode = None
 
         if file_info is not None:
@@ -85,6 +88,8 @@ class JoinItem(object):
             self.range_mode = range_mode
         if word_join_mode is not None:
             self.word_join_mode = word_join_mode
+        if word_join_compliance is not None:
+            self.word_join_compliance = word_join_compliance
         if image_join_mode is not None:
             self.image_join_mode = image_join_mode
     
@@ -255,6 +260,40 @@ class JoinItem(object):
             self._word_join_mode = word_join_mode
         else:
             self._word_join_mode = allowed_values[int(word_join_mode) if six.PY3 else long(word_join_mode)]
+    
+    @property
+    def word_join_compliance(self):
+        """
+        Gets the word_join_compliance.  # noqa: E501
+
+        Compliance mode for the Word Ooxml format  # noqa: E501
+
+        :return: The word_join_compliance.  # noqa: E501
+        :rtype: str
+        """
+        return self._word_join_compliance
+
+    @word_join_compliance.setter
+    def word_join_compliance(self, word_join_compliance):
+        """
+        Sets the word_join_compliance.
+
+        Compliance mode for the Word Ooxml format  # noqa: E501
+
+        :param word_join_compliance: The word_join_compliance.  # noqa: E501
+        :type: str
+        """
+        if word_join_compliance is None:
+            raise ValueError("Invalid value for `word_join_compliance`, must not be `None`")  # noqa: E501
+        allowed_values = ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict", "Auto"]  # noqa: E501
+        if not word_join_compliance.isdigit():	
+            if word_join_compliance not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `word_join_compliance` ({0}), must be one of {1}"  # noqa: E501
+                    .format(word_join_compliance, allowed_values))
+            self._word_join_compliance = word_join_compliance
+        else:
+            self._word_join_compliance = allowed_values[int(word_join_compliance) if six.PY3 else long(word_join_compliance)]
     
     @property
     def image_join_mode(self):
