@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="PreviewOptions.py">
+# <copyright company="Aspose Pty Ltd" file="ApiError.py">
 #   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,11 +30,9 @@ import re  # noqa: F401
 
 import six
 
-from groupdocs_merger_cloud.models import PageOptions
-
-class PreviewOptions(PageOptions):
+class ApiError(object):
     """
-    Represents document preview options
+    
     """
 
     """
@@ -45,122 +43,150 @@ class PreviewOptions(PageOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'width': 'int',
-        'height': 'int',
-        'format': 'str'
+        'code': 'str',
+        'message': 'str',
+        'description': 'str',
+        'date_time': 'datetime',
+        'inner_error': 'ApiError'
     }
 
     attribute_map = {
-        'width': 'Width',
-        'height': 'Height',
-        'format': 'Format'
+        'code': 'Code',
+        'message': 'Message',
+        'description': 'Description',
+        'date_time': 'DateTime',
+        'inner_error': 'InnerError'
     }
 
-    def __init__(self, width=None, height=None, format=None, **kwargs):  # noqa: E501
-        """Initializes new instance of PreviewOptions"""  # noqa: E501
+    def __init__(self, code=None, message=None, description=None, date_time=None, inner_error=None, **kwargs):  # noqa: E501
+        """Initializes new instance of ApiError"""  # noqa: E501
 
-        self._width = None
-        self._height = None
-        self._format = None
+        self._code = None
+        self._message = None
+        self._description = None
+        self._date_time = None
+        self._inner_error = None
 
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
-        if format is not None:
-            self.format = format
-
-        base = super(PreviewOptions, self)
-        base.__init__(**kwargs)
-
-        self.swagger_types.update(base.swagger_types)
-        self.attribute_map.update(base.attribute_map)
+        if code is not None:
+            self.code = code
+        if message is not None:
+            self.message = message
+        if description is not None:
+            self.description = description
+        if date_time is not None:
+            self.date_time = date_time
+        if inner_error is not None:
+            self.inner_error = inner_error
     
     @property
-    def width(self):
+    def code(self):
         """
-        Gets the width.  # noqa: E501
+        Gets the code.  # noqa: E501
 
-        Preview width  # noqa: E501
 
-        :return: The width.  # noqa: E501
-        :rtype: int
-        """
-        return self._width
-
-    @width.setter
-    def width(self, width):
-        """
-        Sets the width.
-
-        Preview width  # noqa: E501
-
-        :param width: The width.  # noqa: E501
-        :type: int
-        """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-        self._width = width
-    
-    @property
-    def height(self):
-        """
-        Gets the height.  # noqa: E501
-
-        Preview height  # noqa: E501
-
-        :return: The height.  # noqa: E501
-        :rtype: int
-        """
-        return self._height
-
-    @height.setter
-    def height(self, height):
-        """
-        Sets the height.
-
-        Preview height  # noqa: E501
-
-        :param height: The height.  # noqa: E501
-        :type: int
-        """
-        if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
-        self._height = height
-    
-    @property
-    def format(self):
-        """
-        Gets the format.  # noqa: E501
-
-        Preview image format  # noqa: E501
-
-        :return: The format.  # noqa: E501
+        :return: The code.  # noqa: E501
         :rtype: str
         """
-        return self._format
+        return self._code
 
-    @format.setter
-    def format(self, format):
+    @code.setter
+    def code(self, code):
         """
-        Sets the format.
+        Sets the code.
 
-        Preview image format  # noqa: E501
 
-        :param format: The format.  # noqa: E501
+        :param code: The code.  # noqa: E501
         :type: str
         """
-        if format is None:
-            raise ValueError("Invalid value for `format`, must not be `None`")  # noqa: E501
-        allowed_values = ["Jpeg", "Png", "Bmp"]  # noqa: E501
-        if not format.isdigit():	
-            if format not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
-                    .format(format, allowed_values))
-            self._format = format
-        else:
-            self._format = allowed_values[int(format) if six.PY3 else long(format)]
+        self._code = code
+    
+    @property
+    def message(self):
+        """
+        Gets the message.  # noqa: E501
+
+
+        :return: The message.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """
+        Sets the message.
+
+
+        :param message: The message.  # noqa: E501
+        :type: str
+        """
+        self._message = message
+    
+    @property
+    def description(self):
+        """
+        Gets the description.  # noqa: E501
+
+
+        :return: The description.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description.
+
+
+        :param description: The description.  # noqa: E501
+        :type: str
+        """
+        self._description = description
+    
+    @property
+    def date_time(self):
+        """
+        Gets the date_time.  # noqa: E501
+
+
+        :return: The date_time.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_time
+
+    @date_time.setter
+    def date_time(self, date_time):
+        """
+        Sets the date_time.
+
+
+        :param date_time: The date_time.  # noqa: E501
+        :type: datetime
+        """
+        self._date_time = date_time
+    
+    @property
+    def inner_error(self):
+        """
+        Gets the inner_error.  # noqa: E501
+
+
+        :return: The inner_error.  # noqa: E501
+        :rtype: ApiError
+        """
+        return self._inner_error
+
+    @inner_error.setter
+    def inner_error(self, inner_error):
+        """
+        Sets the inner_error.
+
+
+        :param inner_error: The inner_error.  # noqa: E501
+        :type: ApiError
+        """
+        self._inner_error = inner_error
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -196,7 +222,7 @@ class PreviewOptions(PageOptions):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PreviewOptions):
+        if not isinstance(other, ApiError):
             return False
 
         return self.__dict__ == other.__dict__

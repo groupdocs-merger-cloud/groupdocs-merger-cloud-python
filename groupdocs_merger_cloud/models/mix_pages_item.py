@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="StorageExist.py">
+# <copyright company="Aspose Pty Ltd" file="MixPagesItem.py">
 #   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class StorageExist(object):
+class MixPagesItem(object):
     """
-    Storage exists
+    Defines item options for documents MixPages method
     """
 
     """
@@ -43,46 +43,75 @@ class StorageExist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'exists': 'bool'
+        'file_index': 'int',
+        'pages': 'list[int]'
     }
 
     attribute_map = {
-        'exists': 'Exists'
+        'file_index': 'FileIndex',
+        'pages': 'Pages'
     }
 
-    def __init__(self, exists=None, **kwargs):  # noqa: E501
-        """Initializes new instance of StorageExist"""  # noqa: E501
+    def __init__(self, file_index=None, pages=None, **kwargs):  # noqa: E501
+        """Initializes new instance of MixPagesItem"""  # noqa: E501
 
-        self._exists = None
+        self._file_index = None
+        self._pages = None
 
-        if exists is not None:
-            self.exists = exists
+        if file_index is not None:
+            self.file_index = file_index
+        if pages is not None:
+            self.pages = pages
     
     @property
-    def exists(self):
+    def file_index(self):
         """
-        Gets the exists.  # noqa: E501
+        Gets the file_index.  # noqa: E501
 
-        Shows that the storage exists.               # noqa: E501
+        Index of the file from MixPagesOptions.Files collection.  # noqa: E501
 
-        :return: The exists.  # noqa: E501
-        :rtype: bool
+        :return: The file_index.  # noqa: E501
+        :rtype: int
         """
-        return self._exists
+        return self._file_index
 
-    @exists.setter
-    def exists(self, exists):
+    @file_index.setter
+    def file_index(self, file_index):
         """
-        Sets the exists.
+        Sets the file_index.
 
-        Shows that the storage exists.               # noqa: E501
+        Index of the file from MixPagesOptions.Files collection.  # noqa: E501
 
-        :param exists: The exists.  # noqa: E501
-        :type: bool
+        :param file_index: The file_index.  # noqa: E501
+        :type: int
         """
-        if exists is None:
-            raise ValueError("Invalid value for `exists`, must not be `None`")  # noqa: E501
-        self._exists = exists
+        if file_index is None:
+            raise ValueError("Invalid value for `file_index`, must not be `None`")  # noqa: E501
+        self._file_index = file_index
+    
+    @property
+    def pages(self):
+        """
+        Gets the pages.  # noqa: E501
+
+        List of page numbers to use in a MixPages operation. NOTE: page numbering starts from 1.  # noqa: E501
+
+        :return: The pages.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._pages
+
+    @pages.setter
+    def pages(self, pages):
+        """
+        Sets the pages.
+
+        List of page numbers to use in a MixPages operation. NOTE: page numbering starts from 1.  # noqa: E501
+
+        :param pages: The pages.  # noqa: E501
+        :type: list[int]
+        """
+        self._pages = pages
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -118,7 +147,7 @@ class StorageExist(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, StorageExist):
+        if not isinstance(other, MixPagesItem):
             return False
 
         return self.__dict__ == other.__dict__

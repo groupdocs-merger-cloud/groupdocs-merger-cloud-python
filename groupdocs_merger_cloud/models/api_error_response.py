@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="StorageExist.py">
+# <copyright company="Aspose Pty Ltd" file="ApiErrorResponse.py">
 #   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class StorageExist(object):
+class ApiErrorResponse(object):
     """
-    Storage exists
+    
     """
 
     """
@@ -43,46 +43,69 @@ class StorageExist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'exists': 'bool'
+        'request_id': 'str',
+        'error': 'ApiError'
     }
 
     attribute_map = {
-        'exists': 'Exists'
+        'request_id': 'RequestId',
+        'error': 'Error'
     }
 
-    def __init__(self, exists=None, **kwargs):  # noqa: E501
-        """Initializes new instance of StorageExist"""  # noqa: E501
+    def __init__(self, request_id=None, error=None, **kwargs):  # noqa: E501
+        """Initializes new instance of ApiErrorResponse"""  # noqa: E501
 
-        self._exists = None
+        self._request_id = None
+        self._error = None
 
-        if exists is not None:
-            self.exists = exists
+        if request_id is not None:
+            self.request_id = request_id
+        if error is not None:
+            self.error = error
     
     @property
-    def exists(self):
+    def request_id(self):
         """
-        Gets the exists.  # noqa: E501
+        Gets the request_id.  # noqa: E501
 
-        Shows that the storage exists.               # noqa: E501
 
-        :return: The exists.  # noqa: E501
-        :rtype: bool
+        :return: The request_id.  # noqa: E501
+        :rtype: str
         """
-        return self._exists
+        return self._request_id
 
-    @exists.setter
-    def exists(self, exists):
+    @request_id.setter
+    def request_id(self, request_id):
         """
-        Sets the exists.
+        Sets the request_id.
 
-        Shows that the storage exists.               # noqa: E501
 
-        :param exists: The exists.  # noqa: E501
-        :type: bool
+        :param request_id: The request_id.  # noqa: E501
+        :type: str
         """
-        if exists is None:
-            raise ValueError("Invalid value for `exists`, must not be `None`")  # noqa: E501
-        self._exists = exists
+        self._request_id = request_id
+    
+    @property
+    def error(self):
+        """
+        Gets the error.  # noqa: E501
+
+
+        :return: The error.  # noqa: E501
+        :rtype: ApiError
+        """
+        return self._error
+
+    @error.setter
+    def error(self, error):
+        """
+        Sets the error.
+
+
+        :param error: The error.  # noqa: E501
+        :type: ApiError
+        """
+        self._error = error
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -118,7 +141,7 @@ class StorageExist(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, StorageExist):
+        if not isinstance(other, ApiErrorResponse):
             return False
 
         return self.__dict__ == other.__dict__

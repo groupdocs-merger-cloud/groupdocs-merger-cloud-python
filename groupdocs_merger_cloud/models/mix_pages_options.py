@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="JoinItem.py">
+# <copyright company="Aspose Pty Ltd" file="MixPagesOptions.py">
 #   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class JoinItem(object):
+class MixPagesOptions(object):
     """
-    Describes document for join operation.
+    Defines options for documents JoinPages method
     """
 
     """
@@ -43,49 +43,39 @@ class JoinItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file_info': 'FileInfo',
-        'pages': 'list[int]',
-        'start_page_number': 'int',
-        'end_page_number': 'int',
-        'range_mode': 'str',
+        'files': 'list[FileInfo]',
+        'files_pages': 'list[MixPagesItem]',
+        'output_path': 'str',
         'word_join_mode': 'str',
         'word_join_compliance': 'str',
         'image_join_mode': 'str'
     }
 
     attribute_map = {
-        'file_info': 'FileInfo',
-        'pages': 'Pages',
-        'start_page_number': 'StartPageNumber',
-        'end_page_number': 'EndPageNumber',
-        'range_mode': 'RangeMode',
+        'files': 'Files',
+        'files_pages': 'FilesPages',
+        'output_path': 'OutputPath',
         'word_join_mode': 'WordJoinMode',
         'word_join_compliance': 'WordJoinCompliance',
         'image_join_mode': 'ImageJoinMode'
     }
 
-    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, word_join_compliance=None, image_join_mode=None, **kwargs):  # noqa: E501
-        """Initializes new instance of JoinItem"""  # noqa: E501
+    def __init__(self, files=None, files_pages=None, output_path=None, word_join_mode=None, word_join_compliance=None, image_join_mode=None, **kwargs):  # noqa: E501
+        """Initializes new instance of MixPagesOptions"""  # noqa: E501
 
-        self._file_info = None
-        self._pages = None
-        self._start_page_number = None
-        self._end_page_number = None
-        self._range_mode = None
+        self._files = None
+        self._files_pages = None
+        self._output_path = None
         self._word_join_mode = None
         self._word_join_compliance = None
         self._image_join_mode = None
 
-        if file_info is not None:
-            self.file_info = file_info
-        if pages is not None:
-            self.pages = pages
-        if start_page_number is not None:
-            self.start_page_number = start_page_number
-        if end_page_number is not None:
-            self.end_page_number = end_page_number
-        if range_mode is not None:
-            self.range_mode = range_mode
+        if files is not None:
+            self.files = files
+        if files_pages is not None:
+            self.files_pages = files_pages
+        if output_path is not None:
+            self.output_path = output_path
         if word_join_mode is not None:
             self.word_join_mode = word_join_mode
         if word_join_compliance is not None:
@@ -94,138 +84,76 @@ class JoinItem(object):
             self.image_join_mode = image_join_mode
     
     @property
-    def file_info(self):
+    def files(self):
         """
-        Gets the file_info.  # noqa: E501
+        Gets the files.  # noqa: E501
 
-        File info.  # noqa: E501
+        Source documents for JoinPages operation  # noqa: E501
 
-        :return: The file_info.  # noqa: E501
-        :rtype: FileInfo
+        :return: The files.  # noqa: E501
+        :rtype: list[FileInfo]
         """
-        return self._file_info
+        return self._files
 
-    @file_info.setter
-    def file_info(self, file_info):
+    @files.setter
+    def files(self, files):
         """
-        Sets the file_info.
+        Sets the files.
 
-        File info.  # noqa: E501
+        Source documents for JoinPages operation  # noqa: E501
 
-        :param file_info: The file_info.  # noqa: E501
-        :type: FileInfo
+        :param files: The files.  # noqa: E501
+        :type: list[FileInfo]
         """
-        self._file_info = file_info
+        self._files = files
     
     @property
-    def pages(self):
+    def files_pages(self):
         """
-        Gets the pages.  # noqa: E501
+        Gets the files_pages.  # noqa: E501
 
-        List of page numbers to use in a Join operation. NOTE: page numbering starts from 1.  # noqa: E501
+        Page numbers for document indicies in Files collection.  # noqa: E501
 
-        :return: The pages.  # noqa: E501
-        :rtype: list[int]
+        :return: The files_pages.  # noqa: E501
+        :rtype: list[MixPagesItem]
         """
-        return self._pages
+        return self._files_pages
 
-    @pages.setter
-    def pages(self, pages):
+    @files_pages.setter
+    def files_pages(self, files_pages):
         """
-        Sets the pages.
+        Sets the files_pages.
 
-        List of page numbers to use in a Join operation. NOTE: page numbering starts from 1.  # noqa: E501
+        Page numbers for document indicies in Files collection.  # noqa: E501
 
-        :param pages: The pages.  # noqa: E501
-        :type: list[int]
+        :param files_pages: The files_pages.  # noqa: E501
+        :type: list[MixPagesItem]
         """
-        self._pages = pages
+        self._files_pages = files_pages
     
     @property
-    def start_page_number(self):
+    def output_path(self):
         """
-        Gets the start_page_number.  # noqa: E501
+        Gets the output_path.  # noqa: E501
 
-        Start page number. Ignored if Pages collection is not empty.  # noqa: E501
+        The output path  # noqa: E501
 
-        :return: The start_page_number.  # noqa: E501
-        :rtype: int
-        """
-        return self._start_page_number
-
-    @start_page_number.setter
-    def start_page_number(self, start_page_number):
-        """
-        Sets the start_page_number.
-
-        Start page number. Ignored if Pages collection is not empty.  # noqa: E501
-
-        :param start_page_number: The start_page_number.  # noqa: E501
-        :type: int
-        """
-        if start_page_number is None:
-            raise ValueError("Invalid value for `start_page_number`, must not be `None`")  # noqa: E501
-        self._start_page_number = start_page_number
-    
-    @property
-    def end_page_number(self):
-        """
-        Gets the end_page_number.  # noqa: E501
-
-        End page number. Ignored if Pages collection is not empty.  # noqa: E501
-
-        :return: The end_page_number.  # noqa: E501
-        :rtype: int
-        """
-        return self._end_page_number
-
-    @end_page_number.setter
-    def end_page_number(self, end_page_number):
-        """
-        Sets the end_page_number.
-
-        End page number. Ignored if Pages collection is not empty.  # noqa: E501
-
-        :param end_page_number: The end_page_number.  # noqa: E501
-        :type: int
-        """
-        if end_page_number is None:
-            raise ValueError("Invalid value for `end_page_number`, must not be `None`")  # noqa: E501
-        self._end_page_number = end_page_number
-    
-    @property
-    def range_mode(self):
-        """
-        Gets the range_mode.  # noqa: E501
-
-        Range mode. Ignored if Pages collection is not empty. Default value is AllPages.  # noqa: E501
-
-        :return: The range_mode.  # noqa: E501
+        :return: The output_path.  # noqa: E501
         :rtype: str
         """
-        return self._range_mode
+        return self._output_path
 
-    @range_mode.setter
-    def range_mode(self, range_mode):
+    @output_path.setter
+    def output_path(self, output_path):
         """
-        Sets the range_mode.
+        Sets the output_path.
 
-        Range mode. Ignored if Pages collection is not empty. Default value is AllPages.  # noqa: E501
+        The output path  # noqa: E501
 
-        :param range_mode: The range_mode.  # noqa: E501
+        :param output_path: The output_path.  # noqa: E501
         :type: str
         """
-        if range_mode is None:
-            raise ValueError("Invalid value for `range_mode`, must not be `None`")  # noqa: E501
-        allowed_values = ["AllPages", "OddPages", "EvenPages"]  # noqa: E501
-        if not range_mode.isdigit():	
-            if range_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `range_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(range_mode, allowed_values))
-            self._range_mode = range_mode
-        else:
-            self._range_mode = allowed_values[int(range_mode) if six.PY3 else long(range_mode)]
+        self._output_path = output_path
     
     @property
     def word_join_mode(self):
@@ -363,7 +291,7 @@ class JoinItem(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, JoinItem):
+        if not isinstance(other, MixPagesOptions):
             return False
 
         return self.__dict__ == other.__dict__
