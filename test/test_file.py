@@ -36,28 +36,28 @@ class TestFile:
     def not_exist(cls):
         f = TestFile()
         f.file_name = "not-exist.docx"
-        f.folder = "somefolder\\"
+        f.folder = "somefolder/"
         return f
 
     @classmethod
     def one_page_docx(cls):
         f = TestFile()
         f.file_name = "one-page.docx"
-        f.folder = "WordProcessing\\"
+        f.folder = "WordProcessing/"
         return f
 
     @classmethod
     def four_pages_docx(cls):
         f = TestFile()
         f.file_name = "four-pages.docx"
-        f.folder = "WordProcessing\\"
+        f.folder = "WordProcessing/"
         return f
 
     @classmethod
     def password_protected_docx(cls):
         f = TestFile()
         f.file_name = "password-protected.docx"
-        f.folder = "WordProcessing\\"
+        f.folder = "WordProcessing/"
         f.password = "password"
         return f
 
@@ -65,14 +65,14 @@ class TestFile:
     def four_sheets_xlsx(cls):
         f = TestFile()
         f.file_name = "four-sheets.xlsx"
-        f.folder = "Spreadsheet\\"
+        f.folder = "Spreadsheet/"
         return f
 
     @classmethod
     def password_protected_xlsx(cls):
         f = TestFile()
         f.file_name = "four-sheets-protected.xlsx"
-        f.folder = "Spreadsheet\\"
+        f.folder = "Spreadsheet/"
         f.password = "password"
         return f
 
@@ -80,21 +80,21 @@ class TestFile:
     def document_txt(cls):
         f = TestFile()
         f.file_name = "document.txt"
-        f.folder = "Text\\"
+        f.folder = "Text/"
         return f
 
     @classmethod
     def ten_pages_pdf(cls):
         f = TestFile()
         f.file_name = "ten-pages.pdf"
-        f.folder = "Pdf\\"
+        f.folder = "Pdf/"
         return f
 
     @classmethod
     def one_page_protected_pdf(cls):
         f = TestFile()
         f.file_name = "one-page-password.pdf"
-        f.folder = "Pdf\\"
+        f.folder = "Pdf/"
         f.password = "password"
         return f                                
 

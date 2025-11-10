@@ -1,5 +1,6 @@
 # GroupDocs.Merger Cloud Python SDK
-Python package for communicating with the GroupDocs.Merger Cloud API
+
+[GroupDocs.Merger Cloud API](https://products.groupdocs.cloud/merger/python/) empowers developers to integrate advanced document merging and page manipulation functionalities into their Python applications. Supporting over 40 file formats, this REST API allows seamless merging, splitting, and reorganization of document pages, including PDFs, Word documents, Excel spreadsheets, and more. Security features include password protection for documents, while additional file and folder operations streamline cloud storage management. Whether working with cross-format documents or performing complex page manipulations, GroupDocs.Merger Cloud delivers robust tools for secure and efficient document handling across web, desktop, and mobile platforms.
 
 ## Requirements
 
@@ -20,29 +21,30 @@ python setup.py install
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation) and then run following:
+This example demonstrates merging different Word files seamlessly with a few lines of code:
 
 ```python
-# Import module
-import groupdocs_merger_cloud
-
-# Get your app_sid and app_key at https://dashboard.groupdocs.cloud (free registration is required).
-app_sid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-app_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-
-# Create instance of the API
-api = groupdocs_merger_cloud.InfoApi.from_keys(app_sid, app_key)
-
-try:
-    # Retrieve supported file-formats
-    response = api.get_supported_file_formats()
-
-    # Print out supported file-formats
-    print("Supported file-formats:")
-    for format in response.formats:
-        print('{0} ({1})'.format(format.file_format, format.extension)) 
-except groupdocs_merger_cloud.ApiException as e:
-    print("Exception when calling get_supported_file_formats: {0}".format(e.message))
+# For complete examples and data files, please go to https://github.com/groupdocs-merger-cloud/groupdocs-merger-cloud-python-samples
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+  
+documentApi = groupdocs_merger_cloud.DocumentApi.from_keys(app_sid, app_key)
+ 
+item1 = groupdocs_merger_cloud.JoinItem()
+item1.file_info = groupdocs_merger_cloud.FileInfo("WordProcessing/sample-10-pages.docx")
+item1.pages = [3, 6, 8]
+ 
+item2 = groupdocs_merger_cloud.JoinItem()
+item2.file_info = groupdocs_merger_cloud.FileInfo("WordProcessing/four-pages.docx")
+item2.start_page_number = 1
+item2.end_page_number = 4
+item2.range_mode = "OddPages"
+ 
+options = groupdocs_merger_cloud.JoinOptions()
+options.join_items = [item1, item2]
+options.output_path = "Output/joined-pages.docx"
+ 
+result = documentApi.join(groupdocs_merger_cloud.JoinRequest(options))
 ```
 
 ## Licensing

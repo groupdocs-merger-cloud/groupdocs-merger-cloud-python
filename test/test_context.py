@@ -51,7 +51,7 @@ class TestContext(unittest.TestCase):
     file_api = None
     folder_api = None
     _test_files_uploaded = False
-    output_path = "output\\"
+    output_path = "output/"
 
     def setUp(self):
         if six.PY3:
@@ -65,7 +65,7 @@ class TestContext(unittest.TestCase):
         self._close_api_thread_pool()
 
     def get_test_file_path(self, file):
-        test_files = "test\\test_files"
+        test_files = "test/test_files"
         test_file_path = os.path.join(test_files, file.folder, file.file_name) 
 
         return test_file_path

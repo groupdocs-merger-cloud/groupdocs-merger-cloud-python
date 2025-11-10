@@ -39,8 +39,8 @@ class TestInfoApi(TestContext):
     def test_get_info_returns_file_not_found(self):
         request = GetInfoRequest(TestFile.not_exist().ToFileInfo())
         with self.assertRaises(ApiException) as context:
-            self.info_api.get_info(request)
-        self.assertEqual("Can't find file located at 'somefolder\\not-exist.docx'.", context.exception.message)
+            self.info_api.get_info(request)        
+        self.assertTrue(context.exception.message.startswith("Can't find file located at"))        
 
     def test_get_info(self):
         request = GetInfoRequest(TestFile.password_protected_docx().ToFileInfo())
