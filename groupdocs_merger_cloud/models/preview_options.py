@@ -47,21 +47,24 @@ class PreviewOptions(PageOptions):
     swagger_types = {
         'width': 'int',
         'height': 'int',
-        'format': 'str'
+        'format': 'str',
+        'resolution': 'int'
     }
 
     attribute_map = {
         'width': 'Width',
         'height': 'Height',
-        'format': 'Format'
+        'format': 'Format',
+        'resolution': 'Resolution'
     }
 
-    def __init__(self, width=None, height=None, format=None, **kwargs):  # noqa: E501
+    def __init__(self, width=None, height=None, format=None, resolution=None, **kwargs):  # noqa: E501
         """Initializes new instance of PreviewOptions"""  # noqa: E501
 
         self._width = None
         self._height = None
         self._format = None
+        self._resolution = None
 
         if width is not None:
             self.width = width
@@ -69,6 +72,8 @@ class PreviewOptions(PageOptions):
             self.height = height
         if format is not None:
             self.format = format
+        if resolution is not None:
+            self.resolution = resolution
 
         base = super(PreviewOptions, self)
         base.__init__(**kwargs)
@@ -161,6 +166,32 @@ class PreviewOptions(PageOptions):
             self._format = format
         else:
             self._format = allowed_values[int(format) if six.PY3 else long(format)]
+    
+    @property
+    def resolution(self):
+        """
+        Gets the resolution.  # noqa: E501
+
+        Preview image resolution (DPI). When 0, the default resolution is used.  # noqa: E501
+
+        :return: The resolution.  # noqa: E501
+        :rtype: int
+        """
+        return self._resolution
+
+    @resolution.setter
+    def resolution(self, resolution):
+        """
+        Sets the resolution.
+
+        Preview image resolution (DPI). When 0, the default resolution is used.  # noqa: E501
+
+        :param resolution: The resolution.  # noqa: E501
+        :type: int
+        """
+        if resolution is None:
+            raise ValueError("Invalid value for `resolution`, must not be `None`")  # noqa: E501
+        self._resolution = resolution
 
     def to_dict(self):
         """Returns the model properties as a dict"""

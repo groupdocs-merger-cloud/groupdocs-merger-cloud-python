@@ -50,7 +50,8 @@ class JoinItem(object):
         'range_mode': 'str',
         'word_join_mode': 'str',
         'word_join_compliance': 'str',
-        'image_join_mode': 'str'
+        'image_join_mode': 'str',
+        'preserve_accessibility': 'bool'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class JoinItem(object):
         'range_mode': 'RangeMode',
         'word_join_mode': 'WordJoinMode',
         'word_join_compliance': 'WordJoinCompliance',
-        'image_join_mode': 'ImageJoinMode'
+        'image_join_mode': 'ImageJoinMode',
+        'preserve_accessibility': 'PreserveAccessibility'
     }
 
-    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, word_join_compliance=None, image_join_mode=None, **kwargs):  # noqa: E501
+    def __init__(self, file_info=None, pages=None, start_page_number=None, end_page_number=None, range_mode=None, word_join_mode=None, word_join_compliance=None, image_join_mode=None, preserve_accessibility=None, **kwargs):  # noqa: E501
         """Initializes new instance of JoinItem"""  # noqa: E501
 
         self._file_info = None
@@ -75,6 +77,7 @@ class JoinItem(object):
         self._word_join_mode = None
         self._word_join_compliance = None
         self._image_join_mode = None
+        self._preserve_accessibility = None
 
         if file_info is not None:
             self.file_info = file_info
@@ -92,6 +95,8 @@ class JoinItem(object):
             self.word_join_compliance = word_join_compliance
         if image_join_mode is not None:
             self.image_join_mode = image_join_mode
+        if preserve_accessibility is not None:
+            self.preserve_accessibility = preserve_accessibility
     
     @property
     def file_info(self):
@@ -328,6 +333,32 @@ class JoinItem(object):
             self._image_join_mode = image_join_mode
         else:
             self._image_join_mode = allowed_values[int(image_join_mode) if six.PY3 else long(image_join_mode)]
+    
+    @property
+    def preserve_accessibility(self):
+        """
+        Gets the preserve_accessibility.  # noqa: E501
+
+        Indicates if PDF accessibility (tagged PDF structure) should be preserved during merge.  # noqa: E501
+
+        :return: The preserve_accessibility.  # noqa: E501
+        :rtype: bool
+        """
+        return self._preserve_accessibility
+
+    @preserve_accessibility.setter
+    def preserve_accessibility(self, preserve_accessibility):
+        """
+        Sets the preserve_accessibility.
+
+        Indicates if PDF accessibility (tagged PDF structure) should be preserved during merge.  # noqa: E501
+
+        :param preserve_accessibility: The preserve_accessibility.  # noqa: E501
+        :type: bool
+        """
+        if preserve_accessibility is None:
+            raise ValueError("Invalid value for `preserve_accessibility`, must not be `None`")  # noqa: E501
+        self._preserve_accessibility = preserve_accessibility
 
     def to_dict(self):
         """Returns the model properties as a dict"""
